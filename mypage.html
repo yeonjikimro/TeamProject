@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/bd2bbc2e2d.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+section {
+    margin: 100px auto;
+}
+
+section.main {
+	flex: 1;
+	padding: 5px;
+	display: flex;
+    flex-direction: column;
+}
+section h1 {
+    display: flex;
+    margin: 50px;
+}
+section h2 {
+    display: inline-block;
+    box-sizing: border-box;
+
+}
+
+section.main article {
+	flex: 3;
+	margin: 0 5px;
+	border: 1px solid blue;
+}
+.head {
+    display: flex;
+    flex-direction: column;
+}
+section ul {
+    list-style: none;
+    display : block;
+}
+.icon {
+    display: inline-block;
+    width: 50px;
+}
+
+.head h1+div {
+    width: 500px;
+}
+#info {
+    display: inline-block;
+    background-color: #ccc;
+}
+
+
+
+</style>
+<body>
+    <section class="main">
+    <div class="head">
+        <h1>마이페이지</h1>
+        <div>
+            <div class="icon">
+            <i class="fa-solid fa-circle-user fa-3x"></i>
+            </div>
+            <h2>김연지님</h2>
+            <div id="info">회원정보 수정</div>
+         </div>
+        <div> 5.0 (총 10개의 후기)</div>
+    </div>
+    <div>
+        <ul>
+            <li>판매중</li>
+            <li>판매완료</li>
+            <li>찜 목록</li>
+        </ul>
+    </div>
+
+    </section>
+    <footer>
+
+    </footer>
+    
+</body>
+</html>
