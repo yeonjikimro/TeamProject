@@ -9,6 +9,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/bd2bbc2e2d.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+            const IMAGE_WIDTH = 600;
+            const preBtn = document.querySelector("button.prev");
+            const nextBtn = document.querySelector("button.next");
+            const images = document.querySelector("div.images");
+            const imgCount = document.querySelectorAll("div.images img").length;
+    
+            let position = 0;
+            let curPosition = 0;
+            if(preBtn) {
+                preBtn.addEventListener("click",()=>{
+                    if(curPosition > 0) {
+                        position += IMAGE_WIDTH
+                        images.style.transform = `translateX(${position}px)`;
+                        curPosition --;
+                    }
+                });
+            }
+            if(nextBtn) {
+                nextBtn.addEventListener("click", ()=> {
+                    if(curPosition < imgCount -1) {
+                        position -= IMAGE_WIDTH;
+                        images.style.transform = `translateX(${position}px)`;
+                        curPosition++;
+                    }
+                });
+            }
+        });
+    </script>
 </head>
 <style>
     a {text-decoration: none; color: inherit; }
@@ -16,21 +46,71 @@
     div {
         display: block;
     }
-    .firimg {
-        margin: 0px;
+    .total {
+        border-bottom: 1px solid #ccc;
+        height: 50%;
+    }
+    .images {
+        display: flex;
+        height: 400px;
+        transition: 1s;
         padding-bottom: 94px;
         float: left;
         width: 50%;
         flex: 1;
     }
-    .firimg img {
-        width: 500px;
-        margin-top: 100px;
+    .images img {
+        width: 600px;
     }
-    .total {
-        border-bottom: 1px solid #ccc;
-        height: 40%;
+    .image_window {
+        width: 300px;
+        height: 500px;
+        overflow: hidden;
+        position: relative;
+        border-top : 2px solid black;
     }
+    div.btn_box {
+        width: 600px;
+        display: flex;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 30px 20px;
+        z-index: 100;
+        opacity : 0;
+        transition: opacity 0.6s;
+        }
+    div.btn_box:hover {
+        opacity: 1;
+    }
+    span.badge {
+        background-color: #000;
+        color: #fff;
+        display: inline-block;
+        border-radius: 50%;
+        border: 2px solid white;
+        width: 15px;
+        height: 15px;
+    }
+    span.badge:hover {
+        cursor: pointer;
+        background-color: white;
+    }
+    button.btn {
+        width: 100px;
+        height: 30px;
+        border: none;
+        color: white;
+        background-color: transparent;
+    }
+
+    button.btn.prev {
+        margin-right: auto;
+    }
+    button.btn.next {
+        margin-left: auto;
+    }
+
     .pro {
         display: inline-block;
         border-left: 1px solid #ccc;
@@ -42,36 +122,43 @@
         display: flex;
         flex: 1;
         box-sizing: border-box;
-        margin-top: 100px;
+        margin-top: 50px;
+        border-bottom: 1px solid #ccc;
 
     }
-    .profile img {
-        width: 150px;
-        float: left;
 
-    }
-    .secimg {
-        width: 600px;
-        margin-left: 30px;
-    }
-    .secimg img{
-        display: inline-block;
-        width: 150px;
-        margin-top: 0;
-    }
     ul li {
         list-style: none;
         display: inline-block;
     }
     .profile2 {
-        display: inline-block;
-    }
-    .profile2 ul li {
         display: flex;
-        width: 300px;
+        flex-direction: column;
+        width: 500px;
        padding: 10px;
+       font-weight: bold;
 
     }
+    #bong {
+        display: flex;
+        margin-top: 20px;
+    }
+    #bong p {
+        margin: 10px 20px;
+    }
+    #bong input {
+        margin-left: 100px;
+        border : none;
+        width: 200px;
+        cursor: pointer;
+        background-color: rgb(0 208 255);
+    }
+    #bong input:hover {
+        background-color: rgb(45, 142, 163);
+        color: white;
+    }
+    
+
     .profile3 {
         top: 300px;
         width: 300px;
@@ -107,13 +194,13 @@
         border-radius: 4px;
     }
     .rating-number {
-        font-size: 25px;
+        font-size: 15px;
         font-weight: 500;
         margin-right: 0.5rem;
         margin-left: 20px;
         padding-left: 0;
         box-sizing: border-box;
-        display: inline-block
+        display: flex;
 
     }
     .heart {
@@ -123,26 +210,43 @@
         margin-left: 20px;
         margin-top: 10px;
         text-align: center;
+        width: 100px;
+        height: 70px;
+        padding: 10px;
+        color: white;
+        background-color: #ccc;
+        cursor: pointer;
+    }
+    .heart:hover {
+        background-color: salmon;
     }
     .trading {
         display: inline-block;
-        margin-top: 100px;
-        margin-left: 50px;
+        margin-top: 20px;
+        margin-left: 1  0px;
     }
     .trading1 {
-        display: inline-block;
+        display: flex;
     }
     .trading2 {
-        display: block;
+        display: flex;
         margin-top: 20px;
     }
-    .trading21 {
-        display:inline-block;
-        font-size: 20px;
-        margin: 20px;
+    .trading2 ul {
+        display: flex;
+        flex-direction: column;
     }
-    .trading21 div:nth-child(2) {
-        padding-left: 10px;
+    .trading2 ul li {
+        padding-top: 20px;
+    }
+    .trading2 ul:first-child {
+        color: grey;
+        font-weight: bold;
+        margin-right: 70px;
+    }
+    .trading2 span {
+        color:rgb(162, 139, 139);
+        padding-right: 100px;
     }
     .youngo {
         margin : 100px 100px;
@@ -211,6 +315,13 @@
         margin-top: 20px;
         margin-bottom: 100px;
     }
+    #rating {
+        margin-top: 20px;
+        display: flex;
+        cursor: pointer;
+
+    }
+
 </style>
 <link rel="stylesheet" href="css/team.css"/>
 <body>
@@ -228,55 +339,77 @@
     </header>
     <section>
         <div class="total">
-            <div class="firimg"><img src="../images2/cal.jpeg">
-                <ul class="secimg">
-                    <li><img src="../images2/cloth.jpeg"></li>
-                    <li><img src="../images2/doll.jpeg"></li>
-                    <li><img src="../images2/fry.jpeg"></li>
-                </ul>
-            </div>
-        <div class="pro">
-                <div class="profile">
-                    <a><img src="../images2/ball.jpeg"></a>
-                    <div class="profile2">
-                        <ul>
-                            <li>제목 : 쿠폰 팔아요~</li>
-                            <li>선호장소 : 광주</li>
-                            <li>닉네임 : 아지</li>
-                        </ul>
-                    </div>
-
-
+            <div class="image_window">
+            
+                <div class="images">
+                    <img src="/images/bicycle1.jpeg"/>
+                    <img src="/images/bicycle2.jpeg"/>
+                    <img src="/images/bicycle3.jpeg"/>
+                    <img src="/images/bicycle4.jpeg"/>
+                    <img src="/images/bicycle5.jpeg"/>
                 </div>
-                    <div class="trading">
-                        <div class="trading1">
-                            <i class="fa-solid fa-star fa-2x" ></i>
-                            <p class="rating-number">4.8(총 10번 거래)</p>
-                            <div class="heart">
-                                <i class="fa-solid fa-heart"></i>
-                                <div>찜하기</div>
-                            </div>
-                        </div>
-                        <div class="trading2">
-                            <div class="trading21">거래방식 : 대면/비대면</div>
-                            <div class="trading21">추천 45</div>
-                        </div>
+                <div class="btn_box">
+                    <button class="btn prev">&#10094;</button>
+                    <div class="badge">
+                        <span class="badge"></span>
+                        <span class="badge"></span>
+                        <span class="badge"></span>
                     </div>
+                    <button class="btn next">&#10095;</button>
+                </div>
+            </div>
+            <div class="pro">
+                    <div class="profile">
+                        <div class="profile2">
+                                <h1>메리다 스컬트라 자전거</h1>
+                                <div id="bong">
+                                    <i class="fa-solid fa-circle-user fa-2x" style="color:grey"></i>
+                                    <p>봉봉</p>
+                                    <input type="button" value="상대페이지">
+                                </div>
+                                <div id="rating">
+                                    <i class="fa-solid fa-star fa-1x" ></i>
+                                    <p class="rating-number">4.8(총 10번 거래)</p>
+                                </div>
+                                </div>
+                        </div>
+                        <div class="trading">
+                            <div class="trading1">
+                                <div class="heart">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <div>찜하기</div>
+                                </div>
+                                <div class="heart">
+                                    <i class="fa-solid fa-thumbs-up"></i>
+                                    <div>추천 45</div>
+                                </div>
+                            </div>
+                            <div class="trading2">
+                                <ul>
+                                    <li>상품상태</li>
+                                    <li>리스트 외 물건 문의</li>
+                                    <li>거래 방식</li>
+                                    <li>배송비</li>
+                                    <li>거래 선호 지역</li>
+                                </ul>
+                                <ul>
+                                    <li>중고</li>
+                                    <li>불가능</li>
+                                    <li>대면/비대면</li>
+                                    <li>배송비 별도</li>
+                                    <li>광주광역시 북구</li>
+                                </ul>
+                            </div>
                     <div class="tag">
                         <div id="article1">받고 싶은 물품 List</div>
                         <input type="text" value="#쿠폰 #핸드폰 #아이폰 # 냉장고 # 갤럭시 # 아이패드 # 포토샵" class="input" >
                     </div> 
-                </div>
+               
+            </div>
         
         </div>
 
         <article>
-
-            <div class="youngo">
-                <div class="you">내꺼니꺼 하기</div>
-                <div class="go">상대페이지 가기</div>
-            </div>
-            <hr>
             <div class="reply">
                 <div class="reply2">
                     <i class="fa-solid fa-comment-dots"></i>

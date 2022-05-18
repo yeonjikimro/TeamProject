@@ -14,92 +14,25 @@
     <script src="https://kit.fontawesome.com/bd2bbc2e2d.js" crossorigin="anonymous"></script>
 </head>
 <style>
-    * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
 
-}
 a {text-decoration: none; color: inherit; }
 
-body {
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-    font-family: 'Gothic A1', sans-serif;
-    font-family: 'Nanum Gothic', sans-serif;
-}
-header {
-    width: 100%;
-            height: 20%;
-            display: flex;
-            border-bottom: 2px solid #eee;
-            background-color: rgb(0 208 255);
-            font-family: 'Gugi', cursive;
-            color: white;
-        }
-        header h1 {
-            text-align: center;
-            margin: 20px 0 10px 550px;
-            padding: 1rem;
-            font-size: 35px;
-        }
-#logo {
-            margin-top: 30px;
-            width: 150px;
-            height: 60px;
-        }
-#group {
-            margin: 20px;
-            width: 70px;
-            height: 50px;
-            margin-left: 300px;
-            float: right;
-        }
-
-#bell {
-            margin: 20px;
-            width: 70px;
-            height: 50px;
-            float: right;
-        }
-
-#mypage {
-            margin: 20px;
-            width: 70px;
-            height: 50px;
-            float: right;
-            cursor: pointer;
-        }
-
-section {
-    margin: 100px 200px;
-}
-
-section.main {
-	flex: 1;
-	padding: 5px;
-	display: flex;
-    flex-direction: column;
-}
-
-section div.abc {
-    display: flex;
-    box-sizing: border-box;
-    margin-left: 10px;
-}
 .kim {
     display: flex;
+    justify-content: center;
     margin-top: 10px;
     margin-left: 20px;
+
 }
 .kim div {
     font-size: 30px;
+    display: inline-block;
 }
 .kim div input {
     margin-left: 30px;
     font-size: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 section.main article {
@@ -107,18 +40,26 @@ section.main article {
 	margin: 0 5px;
 	border: 1px solid blue;
 }
+.up {
+    display: flex;
+    flex-direction: row;
+    margin-left: 70px;
+}
 .head {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     font-size: 30px;
     margin: 0 auto;
+    font-weight: bolder;
+    margin-bottom: 100px;
 }
 section ul {
     list-style: none;
     display : block;
 }
 .icon {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     width: 50px;
 }
 
@@ -126,16 +67,27 @@ section ul {
     width: 500px;
     margin: 50px 10px 50px 0;
 }
+.line {
+    display: flex;
+    width: 1px;
+    height: 100px;
+    background-color: #ccc;
+    margin-left: 100px;
+}
 .stre {
     display: flex;
-    margin-top: 10px;
-    margin-left: 600px;
+    flex-direction: row;
+    margin-top: 30px;
+    flex: 1;
 }
 .stars {
+    display: flex;
     margin-left: 30px;
     margin-right: 20px;
+    cursor: pointer;
 }
 #review {
+    display: flex;
   font-size: 20px;  
   font-weight: bold;
   text-align: right;
@@ -149,13 +101,21 @@ section ul {
     margin-right: 50px;
     width: 100px;
 	padding: 10px 0;
+    text-align: center;
     
 }
 .sell ul li:hover {
     color: #ccc;
+    border-bottom: 2px solid salmon;
 }
 .sell input {
+    float: right;
     font-size: 15px;
+    width: 100px;
+    height: 30px;
+    background-color: salmon;
+    border-color: white;
+    border-radius: 5px;
 }
 #upload {
     margin-left: 150px;
@@ -190,11 +150,19 @@ section ul {
     background-color: bisque;
     text-align: center;
     width: 100px;
+    height: 30px;
+    line-height: 30px;
 }
+
+.box:hover {
+    cursor: pointer;
+    color: #ccc;
+}
+
 .abc {
     float: left;
+    margin-top: 20px;
     margin-bottom: 20px;
-    margin-top: 100px;
 }
 article nav {
             display: flex;
@@ -237,8 +205,37 @@ article nav:hover {
     transform: translateX(1);
     opacity: 1;
 }
-
+#nav_menu {
+    display: flex;
+    height: 0;
+    /* visibility: hidden; */
+    opacity: 0;
+    transition: 0.6s ease-out;
+}
+div.nav_box {
+    display: flex;
+    flex-direction: column;
+}
+header #mypage:hover #nav_menu{
+    display: flex;
+    visibility: visible;
+    height: 200px;
+    opacity: 1;
+    z-index: 100;
+}
+footer div{
+    background-color: rgb(0 208 255);
+    position: absolute;
+    width: 100%;
+}
+.ing {
+    line-height: 190px;
+    margin-left: 100px;
+    font-weight: bold;
+    font-size: 20px;
+}
 </style>
+<link rel="stylesheet" href="css/team.css"/>
 <body>
     <header>
         <h1>내꺼니꺼</h1>
@@ -251,44 +248,49 @@ article nav:hover {
             <div id="mypage">
                 <i class="fa-solid fa-circle-user fa-3x" style="color:white"></i>
             </div>
-
     </header>
     <article>
-        <nav>
-            <div class="hi">
-            <h1>안녕하세요!</h1>
-            </div>
-            <a>
-                <ul class="list">
-                    <li>마이페이지</li>
-                    <li>찜목록</li>
-                    <li>회원정보</li>
-                    <li>홈으로 가기</li>
-                </ul>
-                <div class="logout"><a href="#">로그아웃</a></div>
-            </a>      
-        </nav>
-    </article>
-    <section class="main">
-    <div class="head">마이페이지</div>
-        <div class="abc">
-            <div class="icon">
-            <i class="fa-solid fa-circle-user fa-3x"></i>
-            </div>
-            <div class="kim">
-                <div>김연지님</div>
-                <div><input type="button" value="회원정보 수정" onclick='window.open("#")'></div>
-            </div>
+        <div class="nav-box">
+            <nav id="nav_menu">
+                <div class="hi">
+                <h1>안녕하세요!</h1>
+                </div>
+                <a>
+                    <ul class="list">
+                        <li>마이페이지</li>
+                        <li>찜목록</li>
+                        <li>회원정보</li>
+                        <li>홈으로 가기</li>
+                    </ul>
+                    <div class="logout"><a href="#">로그아웃</a></div>
+                </a>      
+            </nav>
         </div>
-        <div class="stre">
-            <div class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+    </article>
+    <section>
+        <div class="head">마이페이지</div>
+        <div class="up">
+            <div class="abc">
+                <div class="icon">
+                <i class="fa-solid fa-circle-user fa-3x" style="color:rgb(0 208 255)"></i>
+                </div>
+                <div class="kim">
+                    <div>김연지님</div>
+                    <div><input type="button" value="회원정보 수정" onclick='window.open("#")'></div>
+                </div>
             </div>
-            <p id="review"> 5.0 (총 10개의 후기)</p>
+            <div class="line">
+            </div>
+            <div class="stre">
+                <div class="stars">
+                    <i class="fa-solid fa-star fa-2x"></i>
+                    <i class="fa-solid fa-star fa-2x"></i>
+                    <i class="fa-solid fa-star fa-2x"></i>
+                    <i class="fa-solid fa-star fa-2x"></i>
+                    <i class="fa-solid fa-star fa-2x"></i>
+                </div>
+                <p id="review"> 5.0 (총 10개의 후기)</p>
+            </div>
         </div>
     </div>
     <div class="sell">
@@ -311,6 +313,9 @@ article nav:hover {
                 <a class="box">수정하기</a>
             </div>
         </div>
+        <div class="ing">
+            판매중
+        </div>
     </div>
     <div class="stuff">
         <div>
@@ -323,14 +328,15 @@ article nav:hover {
                 <a class="box">수정하기</a>
             </div>
         </div>
+        <div class="ing">
+            판매중
+        </div>
     </div>
-
-
-
     </section>
-
     <footer>
-
+        <div>
+            <address>CopyRight &copy; duswlskfk42@naver.com</address>
+        </div>
     </footer>
     
 </body>
