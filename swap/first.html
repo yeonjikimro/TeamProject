@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>swap people 포스팅</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Gugi&display=swap"
+    rel="stylesheet"
+  />
+    <style>
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+       header div {
+        display: flex;
+        flex-direction: column;
+        background-color: coral;
+        width: 100vw;
+        height: 20vh;
+      }
+      section {
+        background-color: bisque;
+        height: 80vh;
+        padding: 10% 0;
+        display: flex;
+        justify-content: space-around
+        /* 이걸로 변경시 좀더 가운데로 모임justify-content: space-evenly */
+      }
+      #webView div h1{
+        font-size: 2.5rem;
+        margin-top: 10%;
+      }
+      #context {
+        font-size: 1.7rem;
+        margin-top: 20%;
+      }
+      #start-button {
+        cursor: pointer;
+        width: 18vw;
+        height: 5vh;
+        font-size: 1.5rem;
+        margin-top: 10%;
+        margin-left: 40%;
+        align-items: center;
+        background-color: rgb(147, 247, 250);
+        text-align: center;
+      }
+      #start-button:hover {
+        background-color: rgba(255, 255, 143, 0.941);
+      }
+      img {
+        width: 40vw;
+        height: 50vh;
+      }
+      </style>
+  </head>
+  <body>
+    <header>
+        <div></div>
+    </header>
+    <section>
+      <div id="webView">
+        <div>
+          <h1>내꺼니꺼 우리꺼!</h1>
+        </div>
+        <div id="d2">
+          <div id="context">
+            가격 비교 싫고, 다시 사기 싫고, <br>내가 원하는 것을 얻고 싶어!
+          </div>
+          <div id="start-button">
+            <p>내꺼니꺼 시작</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="직찍1.jpg"/>
+      </div>
+    </section>
+    
+  </body>
+</html>
