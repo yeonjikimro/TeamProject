@@ -164,7 +164,7 @@ section ul {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-article nav {
+nav {
             display: flex;
             flex-direction: column;
             padding: 10px;
@@ -199,8 +199,7 @@ nav li:hover {
     padding: 24px 16px;
     display: block;
 }
-
-article nav:hover {
+nav:hover {
     visibility: visible;
     transform: translateX(1);
     opacity: 1;
@@ -216,7 +215,7 @@ div.nav_box {
     display: flex;
     flex-direction: column;
 }
-header #mypage:hover #nav_menu{
+#mypage:hover #nav_menu{
     display: flex;
     visibility: visible;
     height: 200px;
@@ -238,35 +237,38 @@ footer div{
 <link rel="stylesheet" href="css/team.css"/>
 <body>
     <header>
-        <h1>내꺼니꺼</h1>
-            <div id="group">
+        <div class="d3">
+            <h1>내꺼<br>니꺼</h1>
+        </div>
+        <div class="d1">
+            <h1>내꺼니꺼</h1>
+        </div>
+        <div class="d2">
                 <i class="fa-solid fa-people-roof fa-3x" style="color:white"></i>
-            </div>
-            <div id="bell">
                 <i class="fa-regular fa-bell fa-3x" style="color:white"></i>
-            </div>
             <div id="mypage">
                 <i class="fa-solid fa-circle-user fa-3x" style="color:white"></i>
-            </div>
-    </header>
-    <article>
-        <div class="nav-box">
-            <nav id="nav_menu">
-                <div class="hi">
-                <h1>안녕하세요!</h1>
+                <div class="nav-box">
+                    <nav id="nav_menu">
+                        <div class="hi">
+                        <h1>안녕하세요!</h1>
+                        </div>
+                        <a>
+                            <ul class="list">
+                                <li>마이페이지</li>
+                                <li>찜목록</li>
+                                <li>회원정보</li>
+                                <li>홈으로 가기</li>
+                            </ul>
+                            <div class="logout"><a href="#">로그아웃</a></div>
+                        </a>      
+                    </nav>
                 </div>
-                <a>
-                    <ul class="list">
-                        <li>마이페이지</li>
-                        <li>찜목록</li>
-                        <li>회원정보</li>
-                        <li>홈으로 가기</li>
-                    </ul>
-                    <div class="logout"><a href="#">로그아웃</a></div>
-                </a>      
-            </nav>
+             </div>
         </div>
-    </article>
+
+            
+    </header>
     <section>
         <div class="head">마이페이지</div>
         <div class="up">

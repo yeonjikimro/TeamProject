@@ -9,36 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/bd2bbc2e2d.js" crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", ()=>{
-            const IMAGE_WIDTH = 600;
-            const preBtn = document.querySelector("button.prev");
-            const nextBtn = document.querySelector("button.next");
-            const images = document.querySelector("div.images");
-            const imgCount = document.querySelectorAll("div.images img").length;
-    
-            let position = 0;
-            let curPosition = 0;
-            if(preBtn) {
-                preBtn.addEventListener("click",()=>{
-                    if(curPosition > 0) {
-                        position += IMAGE_WIDTH
-                        images.style.transform = `translateX(${position}px)`;
-                        curPosition --;
-                    }
-                });
-            }
-            if(nextBtn) {
-                nextBtn.addEventListener("click", ()=> {
-                    if(curPosition < imgCount -1) {
-                        position -= IMAGE_WIDTH;
-                        images.style.transform = `translateX(${position}px)`;
-                        curPosition++;
-                    }
-                });
-            }
-        });
-    </script>
 </head>
 <style>
     a {text-decoration: none; color: inherit; }
@@ -46,70 +16,62 @@
     div {
         display: block;
     }
-    .total {
-        border-bottom: 1px solid #ccc;
-        height: 50%;
-    }
-    .images {
+    .container {
         display: flex;
-        height: 400px;
-        transition: 1s;
-        padding-bottom: 94px;
-        float: left;
+        flex-direction: column;
         width: 50%;
-        flex: 1;
+        margin : 50px auto;
     }
-    .images img {
-        width: 600px;
-    }
-    .image_window {
-        width: 300px;
-        height: 500px;
+    div.album {
+        width: 500px;
         overflow: hidden;
-        position: relative;
-        border-top : 2px solid black;
     }
-    div.btn_box {
-        width: 600px;
-        display: flex;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        padding: 30px 20px;
-        z-index: 100;
-        opacity : 0;
-        transition: opacity 0.6s;
-        }
-    div.btn_box:hover {
+    div.album div.images1 img {
+        width: 100%;
         opacity: 1;
-    }
-    span.badge {
-        background-color: #000;
-        color: #fff;
-        display: inline-block;
-        border-radius: 50%;
-        border: 2px solid white;
-        width: 15px;
-        height: 15px;
-    }
-    span.badge:hover {
-        cursor: pointer;
-        background-color: white;
-    }
-    button.btn {
-        width: 100px;
-        height: 30px;
-        border: none;
-        color: white;
-        background-color: transparent;
+        transition: 1s ease-in-out;
     }
 
-    button.btn.prev {
-        margin-right: auto;
+
+    div.images {
+        display: flex;
     }
-    button.btn.next {
-        margin-left: auto;
+    div.images1 img {
+        width: 100%;
     }
+    div.ticker {
+        overflow: hidden;
+    }
+    div.ticker:hover div.images {
+        cursor: pointer;
+    }
+        
+    div.ticker img {
+        width: 100px;
+        border: 1px solid #ccc;
+        opacity : 1;
+        transition: opacity 0.6s ease-in-out;
+    }
+    div.ticker img:hover {
+        opacity: 0.6;
+    }
+
+    .total {
+        border-bottom: 1px solid #ccc;
+        height: 70%;
+        display: flex;
+    }
+    .images1, .images2 {
+        display: flex;
+        height: 200px;
+        transition: 1s;
+        padding-bottom: 94px;
+        width: 50%;
+        flex: 1;
+
+    }
+
+
 
     .pro {
         display: inline-block;
@@ -165,7 +127,7 @@
     }
 
     article {
-        display: inline-block;
+        display: flex;
         margin : 50px;
     }
     .tag {
@@ -319,8 +281,8 @@
         margin-top: 20px;
         display: flex;
         cursor: pointer;
-
     }
+
 
 </style>
 <link rel="stylesheet" href="css/team.css"/>
@@ -339,23 +301,20 @@
     </header>
     <section>
         <div class="total">
-            <div class="image_window">
-            
-                <div class="images">
-                    <img src="/images/bicycle1.jpeg"/>
-                    <img src="/images/bicycle2.jpeg"/>
-                    <img src="/images/bicycle3.jpeg"/>
-                    <img src="/images/bicycle4.jpeg"/>
-                    <img src="/images/bicycle5.jpeg"/>
-                </div>
-                <div class="btn_box">
-                    <button class="btn prev">&#10094;</button>
-                    <div class="badge">
-                        <span class="badge"></span>
-                        <span class="badge"></span>
-                        <span class="badge"></span>
+            <div class="container">
+                <div class="album">
+                    <div class="images1">
+                        <img src="/images/bicycle1.jpeg"/>
                     </div>
-                    <button class="btn next">&#10095;</button>
+                </div>
+                <div class="ticker">
+                    <div class="images2">
+                        <img src="/images/bicycle2.jpeg"/>
+                        <img src="/images/bicycle3.jpeg"/>
+                        <img src="/images/bicycle4.jpeg"/>
+                        <img src="/images/bicycle5.jpeg"/>
+                        <img src="/images/bicycle6.jpeg"/>
+                    </div>
                 </div>
             </div>
             <div class="pro">
@@ -405,6 +364,7 @@
                         <input type="text" value="#쿠폰 #핸드폰 #아이폰 # 냉장고 # 갤럭시 # 아이패드 # 포토샵" class="input" >
                     </div> 
                
+               </div>
             </div>
         
         </div>
@@ -434,4 +394,37 @@
         </article>
     </section>
 </body>
+<script>
+    const ticker_click_cb = (e)=>{
+        const ticker_img = e.target
+        if(ticker_img.tagName === "IMG") {
+
+            console.log(ticker_img.src);
+
+            const album = document.querySelector("div.album");
+            const albumImg = album.querySelector("img");
+            
+            albumImg.style.marginLeft = "-100%";
+            albumImg.style.opacity = "0";
+
+ 
+            const newImg = document.createElement("img")
+            newImg.src = ticker_img.src;
+
+            album.querySelector("div.images1").appendChild(newImg);
+            
+            setTimeout(() => {
+
+                album.querySelector("div.images1 img").remove();
+            }, 1000);
+        }  // end if img
+    };// end ticker_click_cb
+    document.addEventListener("DOMContentLoaded",()=> {
+        const ticker = document.querySelector("div.ticker");
+        if(ticker) {
+            ticker.addEventListener("click", ticker_click_cb);
+        }
+    });
+    
+</script>
 </html>
