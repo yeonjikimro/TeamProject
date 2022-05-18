@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bd2bbc2e2d.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    a {text-decoration: none; color: inherit; }
+
+    div {
+        display: block;
+    }
+    .firimg {
+        margin: 0px;
+        padding-bottom: 94px;
+        float: left;
+        width: 50%;
+        flex: 1;
+    }
+    .firimg img {
+        width: 500px;
+        margin-top: 100px;
+    }
+    .total {
+        border-bottom: 1px solid #ccc;
+        height: 40%;
+    }
+    .pro {
+        display: inline-block;
+        border-left: 1px solid #ccc;
+        margin : 10px;
+        padding-left: 50px;
+
+    }
+    .profile {
+        display: flex;
+        flex: 1;
+        box-sizing: border-box;
+        margin-top: 100px;
+
+    }
+    .profile img {
+        width: 150px;
+        float: left;
+
+    }
+    .secimg {
+        width: 600px;
+        margin-left: 30px;
+    }
+    .secimg img{
+        display: inline-block;
+        width: 150px;
+        margin-top: 0;
+    }
+    ul li {
+        list-style: none;
+        display: inline-block;
+    }
+    .profile2 {
+        display: inline-block;
+    }
+    .profile2 ul li {
+        display: flex;
+        width: 300px;
+       padding: 10px;
+
+    }
+    .profile3 {
+        top: 300px;
+        width: 300px;
+    }
+
+    article {
+        display: inline-block;
+        margin : 50px;
+    }
+    .tag {
+        margin-top: 150px;
+    }
+    .input {
+        width: 300px;
+        height: 30px;
+    }
+    #article1 {
+        font-size: 16px;
+        background-color: rgb(0 208 255);
+        opacity: 0.7;
+        padding: 5px;
+        border-radius: 4px;
+        display: inline-block;
+        width: 150px;
+        height: 40px;
+        line-height: 30px;
+    }
+    article input {
+        display: inline-block;
+        color: rgb(94, 94, 94);
+        width: 700px;
+        height: 40px;
+        border-radius: 4px;
+    }
+    .rating-number {
+        font-size: 25px;
+        font-weight: 500;
+        margin-right: 0.5rem;
+        margin-left: 20px;
+        padding-left: 0;
+        box-sizing: border-box;
+        display: inline-block
+
+    }
+    .heart {
+        display: inline-block;
+        float:right;
+        font-size: 20px;
+        margin-left: 20px;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .trading {
+        display: inline-block;
+        margin-top: 100px;
+        margin-left: 50px;
+    }
+    .trading1 {
+        display: inline-block;
+    }
+    .trading2 {
+        display: block;
+        margin-top: 20px;
+    }
+    .trading21 {
+        display:inline-block;
+        font-size: 20px;
+        margin: 20px;
+    }
+    .trading21 div:nth-child(2) {
+        padding-left: 10px;
+    }
+    .youngo {
+        margin : 100px 100px;
+    }
+    .you {
+        margin-left: 130px;
+        font-size: 25px;
+        padding: 5px;
+        border-width: 3px;
+        border-radius: 10px;
+        border-style: solid;
+        display: inline-block;
+    }
+    .go {
+        margin-left: 300px;
+        font-size: 25px;
+        padding: 5px;
+        border-width: 3px;
+        border-radius: 10px;
+        border-style: solid;
+        display: inline-block;
+    }
+    .same {
+        width: 200px;
+        display: flex;
+        top: 1000px;
+        padding: 0;
+        margin: 0;
+
+    }
+    .list {
+        display: inline-block;
+        margin-bottom: 50px;
+        box-sizing: border-box;
+        margin-left: 500px;
+        font-size: 30px;
+    }
+    .reply {
+        display: inline-block;
+        margin-top: 50px;
+    }
+    h3 {
+        font-weight: bold;
+    }
+    .reply2 {
+        display: inline-block;
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
+    .reply3 {
+        display: inline-block;
+        padding-left: 10px;
+    }
+    .square {
+        margin: 10px;
+        border-color: #ccc;
+        width: 1000px;
+        height: 100px;
+    }
+    .enter {
+        float:right;
+        width: 50px;
+        margin-right: 40px;
+    }
+    .replybox {
+        margin-top: 20px;
+        margin-bottom: 100px;
+    }
+</style>
+<link rel="stylesheet" href="css/team.css"/>
+<body>
+    <header>
+        <h1>내꺼니꺼</h1>
+            <div id="group">
+                <i class="fa-solid fa-people-roof fa-3x" style="color:white"></i>
+            </div>
+            <div id="bell">
+                <i class="fa-regular fa-bell fa-3x" style="color:white"></i>
+            </div>
+            <div id="mypage">
+                <i class="fa-solid fa-circle-user fa-3x" style="color:white"></i>
+            </div>
+    </header>
+    <section>
+        <div class="total">
+            <div class="firimg"><img src="../images2/cal.jpeg">
+                <ul class="secimg">
+                    <li><img src="../images2/cloth.jpeg"></li>
+                    <li><img src="../images2/doll.jpeg"></li>
+                    <li><img src="../images2/fry.jpeg"></li>
+                </ul>
+            </div>
+        <div class="pro">
+                <div class="profile">
+                    <a><img src="../images2/ball.jpeg"></a>
+                    <div class="profile2">
+                        <ul>
+                            <li>제목 : 쿠폰 팔아요~</li>
+                            <li>선호장소 : 광주</li>
+                            <li>닉네임 : 아지</li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                    <div class="trading">
+                        <div class="trading1">
+                            <i class="fa-solid fa-star fa-2x" ></i>
+                            <p class="rating-number">4.8(총 10번 거래)</p>
+                            <div class="heart">
+                                <i class="fa-solid fa-heart"></i>
+                                <div>찜하기</div>
+                            </div>
+                        </div>
+                        <div class="trading2">
+                            <div class="trading21">거래방식 : 대면/비대면</div>
+                            <div class="trading21">추천 45</div>
+                        </div>
+                    </div>
+                    <div class="tag">
+                        <div id="article1">받고 싶은 물품 List</div>
+                        <input type="text" value="#쿠폰 #핸드폰 #아이폰 # 냉장고 # 갤럭시 # 아이패드 # 포토샵" class="input" >
+                    </div> 
+                </div>
+        
+        </div>
+
+        <article>
+
+            <div class="youngo">
+                <div class="you">내꺼니꺼 하기</div>
+                <div class="go">상대페이지 가기</div>
+            </div>
+            <hr>
+            <div class="reply">
+                <div class="reply2">
+                    <i class="fa-solid fa-comment-dots"></i>
+                    <div class="reply3">댓글 0</div>
+                </div>
+                <hr>
+                <div class="replybox">
+                    <h3>댓글</h3>
+                    <input type="text" placeholder="댓글을 남겨주세요" class="square">
+                    <input type="button" value="등록" class="enter">
+                </div>
+            <div>
+                <div class="list">비슷한 물건 목록</div>   
+            
+                <div class="same">
+                    <div><img src="images2/ball.jpeg"></div>
+                    <div><img src="images2/ball.jpeg"></div>
+                    <div><img src="images2/ball.jpeg"></div>
+                    <div><img src="images2/ball.jpeg"></div>
+                </div>
+            </div>
+        </article>
+    </section>
+</body>
+</html>
