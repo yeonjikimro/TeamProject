@@ -12,18 +12,13 @@
 </head>
 <style>
     a {text-decoration: none; color: inherit; }
-
-    div {
-        display: block;
-    }
     .container {
         display: flex;
         flex-direction: column;
-        width: 50%;
-        margin : 50px auto;
+        width: 40%;
+        margin: 0 auto;
     }
     div.album {
-        width: 500px;
         overflow: hidden;
     }
     div.album div.images1 img {
@@ -31,14 +26,12 @@
         opacity: 1;
         transition: 1s ease-in-out;
     }
-
-
-    div.images {
-        display: flex;
+    div.images2 img{
+        width: 200px;
+        height: 100px;
+        
     }
-    div.images1 img {
-        width: 100%;
-    }
+
     div.ticker {
         overflow: hidden;
     }
@@ -47,7 +40,7 @@
     }
         
     div.ticker img {
-        width: 100px;
+        width: 150px;
         border: 1px solid #ccc;
         opacity : 1;
         transition: opacity 0.6s ease-in-out;
@@ -63,16 +56,9 @@
     }
     .images1, .images2 {
         display: flex;
-        height: 200px;
         transition: 1s;
-        padding-bottom: 94px;
-        width: 50%;
         flex: 1;
-
     }
-
-
-
     .pro {
         display: inline-block;
         border-left: 1px solid #ccc;
@@ -232,12 +218,15 @@
         display: inline-block;
     }
     .same {
-        width: 200px;
         display: flex;
         top: 1000px;
         padding: 0;
         margin: 0;
 
+    }
+    .same img {
+        width: 300px;
+        height: 200px;
     }
     .list {
         display: inline-block;
@@ -283,21 +272,87 @@
         cursor: pointer;
     }
 
+    nav ul {
+            list-style: none;
+        }
+
+nav ul li {
+            display: flex;
+            padding: 10px;
+        }
+
+nav li:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+nav:hover {
+    visibility: visible;
+    transform: translateX(1);
+    opacity: 1;
+}
+#nav_menu {
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    opacity: 0;
+    transition: 0.6s ease-out;
+    width: 200px;
+    background-color: salmon;
+}
+#nav_menu ul li:last-child {
+    margin-top : 15px;
+}
+div.nav_box {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    height: 100vh;
+    transition: right 250ms ease-in-out 0s;
+    min-height: 0;
+    transform: translateY(0);
+    float: right;
+}
+
+#mypage:hover #nav_menu{
+    display: flex;
+    visibility: visible;
+    height: 30vh;
+    opacity: 1;
+    z-index: 100;
+
+}
 
 </style>
 <link rel="stylesheet" href="css/team.css"/>
 <body>
     <header>
-        <h1>내꺼니꺼</h1>
-            <div id="group">
+        <div class="d3">
+            <h1>니꺼<br>내꺼</h1>
+        </div>
+        <div class="d1">
+            <h1>내꺼니꺼</h1>
+        </div>
+        <div class="d2">
                 <i class="fa-solid fa-people-roof fa-3x" style="color:white"></i>
-            </div>
-            <div id="bell">
                 <i class="fa-regular fa-bell fa-3x" style="color:white"></i>
-            </div>
             <div id="mypage">
                 <i class="fa-solid fa-circle-user fa-3x" style="color:white"></i>
-            </div>
+                <div class="nav_box">
+                    <nav id="nav_menu">
+                            <ul class="list">
+                                <li>마이페이지</li>
+                                <li>찜목록</li>
+                                <li>회원정보</li>
+                                <li>홈으로 가기</li>
+                                <li>로그아웃</li>
+                            </ul>   
+                    </nav>
+                </div>
+             </div>
+        </div>
+
+            
     </header>
     <section>
         <div class="total">
@@ -385,10 +440,10 @@
                 <div class="list">비슷한 물건 목록</div>   
             
                 <div class="same">
-                    <div><img src="images2/ball.jpeg"></div>
-                    <div><img src="images2/ball.jpeg"></div>
-                    <div><img src="images2/ball.jpeg"></div>
-                    <div><img src="images2/ball.jpeg"></div>
+                    <div><img src="images/ex1.jpeg"></div>
+                    <div><img src="images/ex2.jpeg"></div>
+                    <div><img src="images/ex3.jpeg"></div>
+                    <div><img src="images/ex4.jpeg"></div>
                 </div>
             </div>
         </article>
