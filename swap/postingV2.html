@@ -26,20 +26,20 @@
         align-items: center;
       }
       header h1 {
-        font-size: 2rem;
+        font-size: 3rem;
       }
       .d1 {
-        margin-left: auto;
+        margin-left: 38%;
       }
       .d2 {
         margin-left: 27%;
       }
       .d2 i {
-        padding: 0 10px;
+        padding: 0 20px;
       }
       .d3 {
-       margin-left: 3%;
-       font-size: 20px;
+        margin-left: 3%;
+        font-size: 20px;
       }
 
       section {
@@ -90,19 +90,10 @@
       a {
         display: flex;
         border: 1px solid rgb(41, 172, 253);
-        width: 60%;
+        width: 50%;
         align-self: center;
-        margin: 3% 0;
+        margin: 2% 0;
       }
-      /* .d1,
-      .d3 {
-        flex: 2;
-      }
-      .d2 {
-        flex: 2;
-        resize: none;
-        border: none;
-      } */
       textarea {
         width: 100%;
         height: 10rem;
@@ -125,9 +116,11 @@
         margin-top: 10%;
       }
       .addr {
-        width: 100%;
+        width: 20vw;
         height: 10%;
       }
+      
+
     </style>
   </head>
   <script
@@ -149,7 +142,6 @@
       </div>
     </header>
     <section>
-      <a></a>
       <div class="d31">
         <div class="d311">
           <img src="images/직찍1.jpg" id="d311" />
@@ -207,12 +199,21 @@
         ></textarea>
       </div>
       <a></a>
-      <div style="flex-direction:row;">
+      <div style="flex-direction:row; flex: 1 1;">
         <div>
-          <img class="addr" src="images/저장주소.PNG"/>
+          <img class="addr" src="images/저장주소.PNG"/> 
+          <input type="text" placeholder="북광주세무서" style="height: 5vh; font-size: 1.5rem;">
         </div>
         <div>
-          <input type="text" placeholder="북광주세무서">
+              <div>
+                <input type="checkbox" id="scales" name="scales"
+                      checked>
+                <label for="scales">직거래</label>
+              </div>
+              <div>
+                <input type="checkbox" id="horns" name="horns">
+                <label for="horns">택배</label>
+              </div>
         </div>
       </div>
       <a></a>
@@ -221,7 +222,9 @@
         <input type="text" placeholder="#가방#신발#시계" />
         <p>받고싶은 물건 태그 작성</p>
         <input type="text" placeholder="#가방#신발#시계" />
-        <input type="button" value="등록하기" />
+        <a href="상대v3.html">
+          <input type="button" value="등록하기"/>
+        </a>
       </div>
       <div class="d41"></div>
     </section>
