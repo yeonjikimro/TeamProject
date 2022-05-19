@@ -194,6 +194,29 @@
       body footer {
         margin: 0 10%;
       }
+      #bong {
+        display: flex;
+        flex-direction: row;
+        width: 150px;
+      }
+
+      #bong div {
+        margin-left: 10px;
+        font-size: 30px;
+      }
+      #rating {
+        margin-top: 20px;
+        display: flex;
+        cursor: pointer;
+        flex-direction: row;
+        width: 300px;
+        font-size: 20px;
+      }
+      .stars {
+        display: flex;
+        flex-direction: row;
+        margin-right: 20px;
+      }
     </style>
   </head>
   <script
@@ -226,15 +249,18 @@
 
         <div class="he2">
           <div id="bong">
-            <i class="fa-solid fa-circle-user fa-2x" style="color: grey"></i>
-            <p>봉봉</p>
-            <input type="button" value="상대페이지" />
+            <i class="fa-solid fa-circle-user fa-3x" style="color: grey"></i>
+            <div>봉봉</div>
           </div>
-          <p>
-            <i class="fa-solid fa-star">
-              &nbsp;평가 점수 : 4.8 점 / 거래완료 횟수 : 총 13번
-            </i>
-          </p>
+          <div id="rating">
+            <div class="stars">
+              <i class="fa-solid fa-star fa-1x"></i>
+              <i class="fa-solid fa-star fa-1x"></i>
+              <i class="fa-solid fa-star fa-1x"></i>
+              <i class="fa-solid fa-star fa-1x"></i>
+            </div>
+            <p class="rating-number">4.8(총 10번 거래)</p>
+          </div>
           <i class="fa-regular fa-handshake">
             &nbsp;거래방식 : 대면 12(회)/ 비대면 1(회)</i
           >
