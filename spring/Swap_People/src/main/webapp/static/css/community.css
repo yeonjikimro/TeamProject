@@ -1,0 +1,197 @@
+@charset "UTF-8";
+section {
+	width: 80%;
+	margin: auto;
+	min-width: 1200px;
+}
+
+ul {
+	list-style: none;
+	margin: 0 20px;
+	padding: 0;
+	display: inline-block;
+}
+
+#tab ul {
+	width: 90%;
+	height: 10px;
+	line-height: 50px;
+	border-bottom: 1px solid #eee;
+	height: 50px;
+	box-sizing: border-box;
+}
+
+#tab ul li {
+	float: left;
+	width: 10%;
+	border: 1px solid rgb(0, 208, 255);
+	text-align: center;
+	border-bottom: none;
+	font-weight: bold;
+	height: 50px;
+}
+
+#tab ul li:not(:first-child) {
+	border-left: none;
+}
+
+#tab ul li.on {
+	border: 1px solid rgb(0, 208, 255);
+	border-bottom: 1px solid rgb(0, 208, 255);
+	font-weight: bold;
+	color: rgb(0, 208, 255);
+}
+
+#search {
+	height: 20px;
+	margin-top: 10px;
+	width: 90%;
+}
+
+#search div {
+	float: right;
+}
+
+#search a, #search input {
+	vertical-align: middle;
+}
+
+#search a {
+	border: 1px solid rgb(0, 208, 255);
+	line-height: 36px;
+	display: inline-block;
+	padding: 0 5px;
+}
+
+#searchinput {
+	border: 1px solid rgb(0, 208, 255);
+	box-sizing: border-box;
+	padding: 0;
+}
+
+#search input[type="text"] {
+	padding-left: 10px;
+	height: 36px;
+}
+
+#search input[type="button"] {
+	background-color: rgb(0, 208, 255);
+	height: 36px;
+	border: 1px solid #rgb(0 208 255);
+	color: #fff;
+	padding: 0 20px;
+}
+
+#search a.on {
+	border: 1px solid rgb(0, 208, 255);
+	color: rgb(0, 208, 255);
+	text-decoration: underline;
+}
+
+#tb-list ul {
+	width: 90%;
+}
+
+#tb-list li:first-child {
+	float: left;
+}
+
+#tb-list li:last-child {
+	float: right;
+}
+
+article {
+	margin-top: 30px;
+}
+
+#tb-list li a:not(:first-child) {
+	border-left: 1px solid;
+	padding: 0 10px;
+}
+
+#tb-list table {
+	border-collapse: collapse;
+	margin: 0 20px;
+	width: 90%;
+}
+
+#tb-list thead tr {
+	background-color: rgb(0, 208, 255);
+	border-top: 2px solid rgb(0, 208, 255);
+}
+
+#tb-list td, #tb-list th {
+	padding: 15px 0;
+}
+
+#tb-list tbody td:not(:nth-child(2)) {
+	text-align: center;
+}
+
+#tb-list tbody td:nth-child(2) {
+	font-weight: bold;
+}
+
+#tb-list tbody tr {
+	border-top: 1px solid rgb(0, 208, 255);
+}
+
+#tb-list tbody tr:last-child {
+	border-bottom: 1px solid #aaa;
+}
+
+#tb-list tbody td:nth-child(2):hover {
+	color: rgb(0, 208, 255);
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#paging {
+	line-height: 36px;
+	text-align: center;
+	margin: 10px 0;
+	float: auto;
+}
+
+#paging a {
+	min-width: 36px;
+	height: 36px;
+	display: inline-block;
+}
+
+#paging a.on {
+	border: 1px solid rgb(0, 208, 255);
+	color: black;
+}
+
+#paging a.arrow {
+	border: 1px solid #aaa;
+}
+
+#paging a:hover {
+	border: 1px solid #0670b9;
+}
+
+.make {
+	float: right;
+	margin-right: 10%;
+	padding: 0.07rem;
+}
+
+.make button {
+	font-size: 20px;
+}
+
+.d1 a:hover {
+	color: white;
+}
+
+.d1 a {
+	color: white;
+	text-decoration: none;
+}
+
+.list a {
+	color: white;
+	text-decoration: none;
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.callor.page.persistance.UserDao">
+	<select id="selectAll" resultType="UserVO">
+		SELECT * FROM tbl_login
+	</select>
+	
+	<select id="findById" resultType="UserVO">
+		SELECT * FROM tbl_login WHERE username = #{username}
+	</select>
+	
+	<insert id="insert" parameterType="UserVO">
+		INSERT INTO tbl_login
+			(
+				username, 
+				password, 
+				email, 
+				name, 
+				tel,
+				identify,
+				address,
+				role
+			) VALUES (
+				#{username}, 
+				#{password}, 
+				#{email}, 
+				#{name}, 
+				#{tel},
+				#{identify},
+				#{address},
+				#{role}
+			)
+	</insert>
+	<update id="update" parameterType="UserVO">
+		UPDATE tbl_login SET
+				password = #{password}, 
+				email = #{email}, 
+				name = #{name}, 
+				tel = #{tel},
+				identify = #{identify},
+				address = #{address},
+				role = #{role}
+		WHERE username = #{username} 
+	</update>
+	<delete id="delete">
+		DELETE FROM tbl_login WHERE username = #{username}
+	</delete>
+	
+	<select id="create_user_table">
+		CREATE TABLE tbl_login (
+		  username VARCHAR(100) PRIMARY KEY,
+		  password VARCHAR(125) NOT NULL,
+		  email VARCHAR(125),
+		  name VARCHAR(125),
+		  tel VARCHAR(100),
+		  identify VARCHAR(50),
+		  address VARCHAR(100),
+		  role VARCHAR(10)
+		)
+	
+	</select>
+</mapper>
+
+
+
