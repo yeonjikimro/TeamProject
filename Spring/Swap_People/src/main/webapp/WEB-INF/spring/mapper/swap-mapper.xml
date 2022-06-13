@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.callor.page.persistance.PostingDao">
+
+	<select id="selectAll" resultType="PostingVO">
+		SELECT * FROM tbl_posting
+	</select>
+
+	<select id="findById" resultType="PostingVO">
+		SELECT * FROM tbl_posting 
+		WHERE Posting_seq = #{Posting_seq}
+	</select>
+
+	<insert id="insert" parameterType="PostingVO">
+		insert into tbl_posting
+		(
+		Posting_seq,
+		title,
+		cont,
+		cars,
+		cars2,
+		addr,
+		addr_dtl,
+		goods
+		) VALUES (
+		#{Posting_seq},
+		#{title},
+		#{cont},
+		#{cars},
+		#{cars2},
+		#{addr},
+		#{addr_dtl},
+		#{goods}
+		)
+	</insert>
+
+	<update id="update" parameterType="PostingVO">
+		UPDATE tbl_posting SET
+			title = #{title},
+			cont = #{cont},
+			cars = #{cars},
+			cars2 = #{cars2},
+			addr = #{addr},
+			addr_dtl = #{addr_dtl},
+			goods = #{goods}
+		WHERE Posting_seq = #{Posting_seq}
+	</update>
+	<delete id="delete">
+		DELETE FROM tbl_posting 
+		WHERE Posting_seq = #{Posting_seq}
+	</delete>
+</mapper>
+
