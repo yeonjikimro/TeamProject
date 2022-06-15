@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.callor.page.persistance.TradingListDao">
+	<select id="selectAll" resultType="trading_listVO">
+		SELECT * FROM tbl_tradinglist
+	</select>
+
+	<select id="findById" resultType="trading_listVO">
+		SELECT * FROM tbl_tradinglist
+		WHERE username = #{username}
+	</select>
+
+
+	<insert id="insert" parameterType="trading_listVO">
+		INSERT INTO tbl_tradinglist
+		(
+		username nVARCHAR(100) primary key,
+		post_title VARCHAR(100) not null,
+		post_situ VARCHAR(100) not null
+		) VALUES (
+		#{username},
+		#{post_title},
+		#{post_situ}
+		)
+	</insert>
+	<update id="update" parameterType="trading_listVO">
+		UPDATE tbl_tradinglist SET
+		post_title =
+		#{post_title},
+		post_situ = #{post_situ}
+		WHERE username =
+		#{username}
+
+
+	</update>
+	<delete id="delete" parameterType="trading_listVO">
+		DELETE FROM tbl_tradinglist WHERE
+		username = #{username}
+	</delete>
+
+	<select id="create_user_table">
+		CREATE TABLE tbl_tradinglist (
+		username nVARCHAR(100) primary key,
+		post_title VARCHAR(100) not null,
+		post_situ VARCHAR(100) not null
+		);
+
+	</select>
+</mapper>
+
+
+
