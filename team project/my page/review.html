@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/bd2bbc2e2d.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      border-bottom: 2px solid rgb(0, 0, 0);
+      color: black;
+      background-color: rgb(0 208 255);
+      width: 100%;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+
+    section {
+      background-color: rgb(255, 255, 255);
+      width: 100%;
+      height: 100%;
+    }
+
+    .stre {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: black;
+      margin: 20px auto;
+    }
+
+    .stre p {
+      margin-left: 20px;
+      font-size: 20px;
+    }
+
+    .stars {
+      color: rgb(2, 84, 106);
+    }
+
+    .stars i:last-of-type {
+      font-size: 33px;
+    }
+
+    table {
+      width: 100%;
+      text-align: center;
+      border-collapse: collapse;
+    }
+
+    tr th,
+    td {
+      border-bottom: 1px solid rgb(0, 0, 0);
+      padding: 0.6rem;
+    }
+
+    tr th,
+    td:not(:first-child) {
+      border-left: 1px solid rgb(0, 0, 0);
+    }
+
+    tr th {
+      border-top: 2px solid rgb(0, 0, 0);
+      border-bottom: 2px solid rgb(0, 0, 0);
+      font-size: 20px;
+    }
+
+    tr td {
+      font-size: 15px;
+    }
+
+    #paging {
+      border-collapse: collapse;
+      text-align: center;
+      margin: 20px;
+    }
+
+    #paging a.arrow {
+      border: 2px solid rgb(0, 0, 0);
+      padding: 0.1rem;
+    }
+
+    #paging a {
+      border: 1px solid black;
+      padding: 0.1rem;
+    }
+
+    #paging a:hover {
+      cursor: pointer;
+      background-color: rgb(0, 0, 0);
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Review</h1>
+  </header>
+  <section>
+    <div class="stre">
+      <div class="stars">
+        <i class="fa-solid fa-star fa-2x"></i>
+        <i class="fa-solid fa-star fa-2x"></i>
+        <i class="fa-solid fa-star fa-2x"></i>
+        <i class="fa-solid fa-star fa-2x"></i>
+        <i class="fa-regular fa-star"></i>
+      </div>
+      <p id="review">4.5 (총 10개의 후기)</p>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <th>닉네임</th>
+          <th>내용</th>
+          <th>별점</th>
+        </tr>
+        <tr>
+          <td>아지아지</td>
+          <td>연락이 빠르세요</td>
+          <td>
+            <i class="fa-solid fa-star fa-2x" style="font-size: 25px; color: rgb(2, 84, 106)"></i>
+            4개
+          </td>
+        </tr>
+        <tr>
+          <td>토끼님</td>
+          <td>제가 있는곳 까지 와주셨어요</td>
+          <td>
+            <i class="fa-solid fa-star fa-2x" style="font-size: 25px; color: rgb(2, 84, 106)"></i>
+            5개
+          </td>
+        </tr>
+        <tr>
+          <td>네카라</td>
+          <td>물건이 깨끗 관리가 잘되어 있어요</td>
+          <td>
+            <i class="fa-solid fa-star fa-2x" style="font-size: 25px; color: rgb(2, 84, 106)"></i>
+            5개
+          </td>
+        </tr>
+        <tr>
+          <td>10cm</td>
+          <td>마지막까지 잘 도와주셨습니다</td>
+          <td>
+            <i class="fa-solid fa-star fa-2x" style="font-size: 25px; color: rgb(2, 84, 106)"></i>
+            5개
+          </td>
+        </tr>
+        <tr>
+          <td>서랍속 핫바</td>
+          <td>물건이 깨끗했습니다</td>
+          <td>
+            <i class="fa-solid fa-star fa-2x" style="font-size: 25px; color: rgb(2, 84, 106)"></i>
+            5개
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+  <footer>
+    <div id="paging">
+      <a class="arrow"><i class="fa-solid fa-angle-left"></i></a> <a>1</a>
+      <a>2</a>
+      <a class="arrow"><i class="fa-solid fa-angle-right"></i></a>
+    </div>
+  </footer>
+</body>
+
+</html>

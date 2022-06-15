@@ -17,7 +17,11 @@
 		<property name="driverClassName"
 			value="com.mysql.cj.jdbc.Driver" />
 		<property name="url"
+<<<<<<< HEAD
 			value="jdbc:mysql://localhost:3306/swap" />
+=======
+			value="jdbc:mysql://localhost:3306/user" />
+>>>>>>> 4243f35aad7aaca97b3050d6e53234b269664be7
 		<property name="username" value="root" />
 		<property name="password" value="!Korea8080" />
 	</bean>

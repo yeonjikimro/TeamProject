@@ -1,5 +1,9 @@
 @charset "UTF-8";
+<<<<<<< HEAD
 section.main {
+=======
+section {
+>>>>>>> 4243f35aad7aaca97b3050d6e53234b269664be7
 	min-width: 1200px;
 	width: 70%;
 	align-items: center;

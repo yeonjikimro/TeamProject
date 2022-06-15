@@ -8,7 +8,11 @@
 <script>
  function popMap(){
 	 
+<<<<<<< HEAD
 	 window.open("${rootPath}/item/map3", "map", "width = 1000, height = 400, top=300, left=300");
+=======
+	 window.open("${rootPath}/posting/map3", "map", "width = 1000, height = 400, top=300, left=300");
+>>>>>>> 4243f35aad7aaca97b3050d6e53234b269664be7
 	 
  }
  
