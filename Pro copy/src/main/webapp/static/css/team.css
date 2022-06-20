@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html, body {
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+
+section {
+   margin: 100px auto;
+   flex: 1;
+   padding: 5px;
+   display: flex;
+   flex-direction: column;
+   min-width: 1200px;
+}
+
+
+
+@import
+   url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
+
+body {
+   width: 99vw;
+   height: 98vh;
+   margin:0;
+}
+
+header {
+   position: relative;
+   width: 100%;
+   height: 150px;
+   display: flex;
+   justify-content: space-between;
+   background-color: rgb(0, 208, 255);
+   font-family: "Gugi", cursive;
+   color: white;
+   align-items: center;
+   min-width: 1200px;
+   align-items: center;
+/*    justify-content: center; */
+}
+
+.hj-d1, .hj-d2, hj-d2 {
+   width: 260px;
+}
+
+.hj-d1 {
+   display: flex;
+   margin-left: 50px;
+}
+
+.hj-d2 {
+   text-align: center;
+}
+
+.hj-i {
+   margin: 0 10px;
+}
+
+.hj-3 {
+   display :inline-block;
+   width: 48px;
+   magrin : 0;
+   padding : 0;
+   cursor:pointer;
+   margin-right: 50px;
+}
+
+.hj-4 {
+}
+
+
+.hj-menu {
+   position: absolute;
+}
+
+.hj-hover {
+   position: absolute;
+   left : 87vw;
+   top : -130px;
+   width: 200px;
+   height : 200px;
+   border: 1px solid blue;
+}
+.hj-list {
+   position: absolute;
+   left : 89vw;
+   top : 40px;
+   visibility: hidden;
+   flex-direction: column;
+/*    height: 0; */
+   opacity: 0;
+   transition: 0.6s ease-out;
+   width: 150px;
+   background-color: salmon;
+}
+
+.hj-list li:hover {
+   background-color: rgb(0, 208, 255);
+   color : black;
+}
