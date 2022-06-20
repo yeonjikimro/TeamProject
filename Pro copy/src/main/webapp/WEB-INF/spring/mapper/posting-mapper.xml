@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.callor.page.persistance.PostingDao">
+
+	<select id="selectAll" resultType="PostingVO">
+		SELECT * FROM tbl_posting
+	</select>
+
+	<select id="findById" resultType="PostingVO">
+		SELECT * FROM tbl_posting 
+		WHERE posting_seq = #{posting_seq}
+	</select>
+	
+	<select id="findByUsername" resultType="PostingVO">
+		SELECT * FROM tbl_posting 
+		WHERE username = #{username}
+	</select>
+	
+	<select id="memberWrite" resultType="PostingVO">
+		SELECT * FROM tbl_posting
+		WHERE username = #{username}
+	</select>
+		<select id="findByPosting_seq" resultType="PostingVO">
+		SELECT * FROM tbl_posting
+		WHERE posting_seq = #{posting_seq}
+	</select>
+
+	<insert id="insert" parameterType="PostingVO" useGeneratedKeys="true" keyProperty="posting_seq">
+		insert into tbl_posting
+		(
+		posting_seq,
+		username,
+		title,
+		image,
+		cont,
+		cars,
+		cat_code,
+		addr,
+		addr_dtl,
+		goods,
+		post_situ
+		) VALUES (
+		#{posting_seq},
+		#{username},
+		#{title},
+		#{image},
+		#{cont},
+		#{cars},
+		#{cat_code},
+		#{addr},
+		#{addr_dtl},
+		#{goods},
+		0
+		)
+	</insert>
+
+	<update id="update" parameterType="PostingVO">
+		UPDATE tbl_posting SET
+			username = #{username},
+			title = #{title},
+			cont = #{cont},
+			image = #{image},
+			cars = #{cars},
+			cat_code = #{cat_code},
+			addr = #{addr},
+			addr_dtl = #{addr_dtl},
+			goods = #{goods},
+			post_situ = #{post_situ}
+		WHERE posting_seq = #{posting_seq}
+	</update>
+		<update id="situ_update" parameterType="PostingVO">
+		UPDATE tbl_posting SET
+			post_situ = #{post_situ}
+		WHERE posting_seq = #{posting_seq}
+	</update>
+	
+	
+	
+	
+	<delete id="delete">
+		DELETE FROM tbl_posting 
+		WHERE posting_seq = #{posting_seq}
+	</delete>
+	<select id="postingCnt" parameterType="PostingVO" resultType="java.lang.Integer">
+		SELECT
+			(IFNULL(MAX(POSTING_SEQ),0) + 1) AS CNT
+		FROM
+			TBL_POSTING 
+	</select>
+	
+	<select id="getCatCode" resultType="PostingVO">
+		SELECT 
+			CAT_NAME, CAT_CODE 
+		FROM 
+			TBL_CATEGORY
+		WHERE cat_code = #{code}
+		ORDER BY CAT_CODE
+	</select>
+	
+	<select id="getCateListAll" resultType="PostingVO">
+		SELECT 
+			CAT_NAME, CAT_CODE 
+		FROM 
+			TBL_CATEGORY
+		ORDER BY CAT_CODE
+	</select>
+	
+	<select id="postingDetail"  parameterType="PostingVO" resultType="PostingVO">
+		SELECT
+			posting_seq,
+			username,
+			title,
+			image,
+			cont,
+			cars,
+			cat_code,
+			addr,
+			addr_dtl,
+			goods,
+			post_situ
+		from 
+			tbl_posting
+		WHERE 
+			posting_seq = #{posting_seq}
+	</select>
+</mapper>
+
